@@ -35,7 +35,7 @@ borrowed_books INT[] DEFAULT ARRAY[]::INT[]
 );
 
 Step 2: Insert Data
-- write the following queries to insert records into tables
+- write the following queries to insert records into tables:
 
 INSERT INTO Books (title, author_id, genres, published_year, available) VALUES
     ('1984', 1, ARRAY['Dystopian', 'Political Fiction'], 1949, TRUE),
@@ -75,13 +75,13 @@ INSERT INTO Patrons (name, email, borrowed_books) VALUES
     ('Jack Anderson', 'jack@example.com', ARRAY[7, 8]);
 
 Step 3: Read Operations (Queries)
-- Get all books
+- Get all books:
   SELECT * FROM Books;
 
-- Get books by title
+- Get books by title:
   SELECT title FROM Books;
 
-- Get all books by a specific author
+- Get all books by a specific author:
   SELECT 
 	b.id,
     b.title,
@@ -92,7 +92,7 @@ FROM Books b
 INNER JOIN Authors a on b.author_id = a.author_id
 WHERE a.name = 'Jane Austen';
 
-- Get all available books
+- Get all available books:
   SELECT 
     id,
     title,
