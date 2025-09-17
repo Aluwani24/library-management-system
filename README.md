@@ -120,5 +120,18 @@ Step 4: Update Operations
   SET borrowed_books = borrowed_books || ARRAY [1]
   WHERE name = 'Alice Johnson';
 
+Step 5: Delete Operations
+- Delete a book by title:
+  DELETE FROM Books
+  WHERE title = 'Moby-Dick'
+
+- Delete an author by ID: since there's a references you need to delete first the book.
+  DELETE FROM Books
+  WHERE author_id = 3;
+
+  DELETE FROM Authors
+  WHERE author_id = 3
+
+
 
 
