@@ -104,5 +104,21 @@ FROM
 WHERE 
     available = TRUE;
 
+Step 4: Update Operations
+- Mark a book as borrowed (set available = false):
+  UPDATE Books
+  SET available = FALSE
+  WHERE title = 'War and Peace';
+
+- Add a new genre to an existing book:
+  UPDATE Books
+  SET genres = genres || ARRAY['Documentary']
+  WHERE title = 'War and Peace';
+
+- Add a borrowed book to a patron’s record:
+  UPDATE Patrons
+  SET borrowed_books = borrowed_books || ARRAY [1]
+  WHERE name = 'Alice Johnson';
+
 
 
