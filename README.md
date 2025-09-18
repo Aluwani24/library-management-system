@@ -132,6 +132,61 @@ Step 5: Delete Operations
   DELETE FROM Authors
   WHERE author_id = 3
 
+Step 6: Advanced Queries
+- Find books published after 1950:
+  SELECT 
+	id,
+	title,
+	author_id,
+	genres,
+	published_year,
+	available
+FROM Books
+WHERE published_year >= 1950
+
+- Find all American authors:
+  SELECT 
+	author_id,
+	name,
+	nationality,
+	birth_year,
+	death_year
+FROM Authors
+WHERE nationality = 'American'
+
+- Set all books as available:
+  UPDATE Books
+  SET availble = TRUE
+
+- Find all books that are available AND published after 1950:
+  SELECT 
+	id,
+	title,
+	author_id,
+	genres,
+	published_year,
+	available
+FROM Books
+WHERE available = TRUE AND published_year >= 1950
+
+- Find authors whose names contain "George":
+  SELECT 
+	author_id,
+	name,
+	nationality,
+	birth_year,
+	death_year
+FROM Authors
+WHERE name ILIKE '%George%'
+
+- Increment the published year 1869 by 1:
+  UPDATE Books
+  SET published_year = published_year + 1
+  WHERE published_year = 1869
+
+
+  ----END-----
+  
 
 
 
